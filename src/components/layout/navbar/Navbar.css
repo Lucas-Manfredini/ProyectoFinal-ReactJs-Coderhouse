@@ -1,0 +1,14 @@
+.ContenedorNavbar {
+  width: 100%;
+  background-color: bisque;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContenedorCategorias {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
