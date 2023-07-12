@@ -1,20 +1,25 @@
-import Home from "./components/pages/home/home";
-import Footer from "./components/layout/footer/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemsListContainer from "./components/pages/ItemList/ItemsListContainer";
+import ItemDetailContainer from "./components/pages/ItemDetail/ItemDetailContainer";
+import CartContainer from "./components/pages/cart/CartContainer";
 import Navbar from "./components/layout/navbar/Navbar";
-import ProductList from "./components/common/ProductsList";
-import ItemListContainer from "./components/pages/ItemList/ItemListContainer";
+import Home from "./components/pages/home/home";
+import CheckoutContainer from "./components/pages/CheckOut/CheckoutContainer";
 
 function App() {
-  const Saludar = "Hola, Bienvenidos!";
-
   return (
-    <div>
-      <Home />
-      <Navbar />
-      <ItemListContainer Saludar={Saludar} />
-      <ProductList />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navbar />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/Camaras" element={<ItemsListContainer />} />
+          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<CartContainer />} />
+          <Route path="/category/CheckOut" element={<CheckoutContainer />} />
+        </Route>
+        <Route path="*" element={<h1>404 - Not found</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,16 +1,23 @@
-import CarritoWidget from "../../common/WidgetCarrito/CarritoWidget";
+import CartWidget from "../../common/CartWidget/CartWidget";
 import "./Navbar.css";
+import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="ContenedorNavbar">
-      <h4>Navbar en React</h4>
-      <ul className="ContenedorCategorias">
-        <li>Inicio</li>
-        <li>Contacto</li>
-        <li>Mercado</li>
-      </ul>
-      <CarritoWidget />
+    <div>
+      <div className={"containerNavbar"}>
+        <Link to="/">LM Photo</Link>
+
+        <ul className="categories">
+          <Link to="/category/Camaras">Camaras</Link>
+          <Link to="/category/Mochilas">Mochilas</Link>
+          <Link to="/category/Flashes">Flashes</Link>
+          <Link to="/category/CheckOut">CheckOut</Link>
+        </ul>
+
+        <CartWidget />
+      </div>
+      <Outlet />
     </div>
   );
 };

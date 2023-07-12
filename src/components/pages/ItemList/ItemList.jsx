@@ -1,10 +1,21 @@
-import "./ItemList.css";
-const ItemList = ({ NombreList, Saludar }) => {
+import ProductCard from "../../common/ProductCard/ProductCard";
+
+const ItemList = ({ items }) => {
   return (
-    <div>
-      <h1>{NombreList}</h1>
-      <h2 className="ContenedorItemList">{Saludar}</h2>
-    </div>
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        paddingTop: "50px",
+        gap: "20px",
+      }}
+    >
+      {items.map((item) => (
+        <ProductCard key={item.id} item={item} />
+      ))}
+    </section>
   );
 };
 
