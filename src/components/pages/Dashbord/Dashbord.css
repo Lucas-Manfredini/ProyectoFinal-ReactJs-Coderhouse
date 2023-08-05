@@ -1,0 +1,12 @@
+.ContenedorDashbord {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-top: 350px;
+}
+
+.H1DashBord {
+  color: brown;
+}

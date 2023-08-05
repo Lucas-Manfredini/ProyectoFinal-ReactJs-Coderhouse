@@ -1,5 +1,6 @@
-import "./Home.css";
-const Home = () => {
+import React from "react";
+
+const HomeContainer = () => {
   return (
     <div className="ContenedorHome">
       <h1>Bienvenidos a LM Photo.</h1>
@@ -8,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeContainer;
